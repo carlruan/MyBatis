@@ -45,4 +45,12 @@
     <select id="checkLoginByParam" resultType="com.kaifeng.mybatis.pojo.User">
         select * from t_user where username = #{username} and password = #{password}
     </select>
+
+    <select id="getUserByLike" resultType="com.kaifeng.mybatis.pojo.User">
+        select * from t_user where username like "%"#{username}"%"
+    </select>
+
+    <delete id="deleteMore">
+        delete from t_user where id in (${ids})
+    </delete>
 </mapper>

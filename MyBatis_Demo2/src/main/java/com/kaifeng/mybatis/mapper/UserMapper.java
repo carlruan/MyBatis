@@ -26,4 +26,8 @@ public interface UserMapper {
     User checkLoginByMap(Map<String, Object> map);
 
     User checkLoginByParam(@Param("username") String username, @Param("password") String password);
+
+    User getUserByLike(@Param("username") String username);
+
+    int deleteMore(@Param("ids") String ids);
 }
