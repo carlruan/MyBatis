@@ -1,14 +1,26 @@
 package com.kaifeng.mybatis.pojo;
 
+import java.util.List;
+
 public class Dept {
     private Integer did;
     private String deptName;
+    private List<Emp> emps;
+
+    public List<Emp> getEmps() {
+        return emps;
+    }
+
+    public void setEmps(List<Emp> emps) {
+        this.emps = emps;
+    }
 
     @Override
     public String toString() {
         return "Dept{" +
                 "did=" + did +
-                ", deptName=" + deptName +
+                ", deptName='" + deptName + '\'' +
+                ", emps=" + emps +
                 '}';
     }
 
