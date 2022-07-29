@@ -6,6 +6,10 @@ import com.kaifeng.mybatis.utils.SqlSessionUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ResultMapTest {
     @Test
     public void test1(){
@@ -25,6 +29,10 @@ public class ResultMapTest {
     public void test3(){
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         DynamicSqlMapper mapper = sqlSession.getMapper(DynamicSqlMapper.class);
-        System.out.println(mapper.getEmpByCondition(new Emp(null, "张三", null, "男", "zhangsan@test.com")));
+        Emp e1 = new Emp(null, "e1", 23, "男", "a1@test.com", null);
+        Emp e2 = new Emp(null, "e2", 21, "男", "a2@test.com", null);
+        Emp e3 = new Emp(null, "e3", 25, "女", "a3@test.com", null);
+        List<Emp> l = Arrays.asList(e1, e2, e3);
+        System.out.println(mapper.getEmpByCondition(new Emp(null, "张三", null, "", "")));
     }
 }
